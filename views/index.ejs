@@ -1,0 +1,47 @@
+<!--
+File: Index file of View
+App Name: MEAN Boiler
+Purpose: Index File of Single Page App[SPA]
+Created By: Hardik Thakor -->
+
+<!DOCTYPE html>
+<html ng-app="boiler">
+
+  <head>
+      <title ng-bind="webTitle"></title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+      <!--Java Scripts-->
+      <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
+      <script type="text/javascript" src="../bower_components/jquery-ui/jquery-ui.js"></script>
+
+      <!-- Angular -->
+      <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+      <script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"></script>
+
+      <!-- Moment -->
+      <script type="text/javascript" src="../bower_components/moment/moment.js"></script>
+
+      <!-- Bootstrap -->
+      <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+      <link type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+      <link type="text/css" href="../bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet" />
+
+      <!--  Stylesheets -->
+      <link type="text/css" href="./stylesheets/font.css" rel="stylesheet" />
+
+      <!--  App Scripts and Style -->
+      <link type="text/css" href="./stylesheets/style.css" rel="stylesheet" />
+      <script src="./javascripts/config.js"></script>
+      <script src="./javascripts/app.js"></script>
+      <script src="./javascripts/controllers/welcome.js"></script>
+      <script src="./javascripts/services/restService.js"></script>
+  </head>
+
+  <body class="main">
+      <div ng-view="">
+        <!--  Template View Platform-->
+      </div>
+</body>
+</html>

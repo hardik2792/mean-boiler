@@ -1,0 +1,154 @@
+/*
+File: style.css
+App Name: MEAN Boiler
+Purpose: Provides Style To App with Variables
+Created By: Hardik Thakor
+*/
+
+/**** CSS Configuration ****/
+:root {
+    /* Theme Color */
+    --theme-color: #1e6897;
+    /* Theme Contrast Color For Content */
+    --theme-contrast-color: #fefefe;
+    /* Default Tooltip Text Background Color */
+    --tooltip-bgcolor: #bdc3c7;
+    /* Default Tooltip Text Color */
+    --tooltip-color: #5e5e5e;
+    /* Default Textarea Background Color */
+    --textarea-bgcolor: #f7f6f5;
+    /* Default Textarea Border Color */
+    --textarea-border-color: #e7e4e4;
+    /* Default Toaster Background Color */
+    --toaster-bgcolor: var(--theme-color);
+    /* Default Toaster Content Color */
+    --toaster-color: var(--theme-contrast-color);
+}
+
+/**** CSS Configuration ****/
+body {
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    height: 100%;
+
+}
+
+/**** All Anchor Tag ****/
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none !important;
+    cursor: pointer;
+}
+
+.slant-label {
+    height: 20px;
+    width: 150px;
+    text-align: center;
+    position: relative;
+    transform: rotate(45deg);
+    left: 104px;
+    top: 20px;
+    background-color: var(--theme-color);
+    color: var(--theme-contrast-color);
+}
+
+.summaryData{
+    color: var(--theme-color);
+}
+
+.main{
+  height:100vh;
+  color: green;
+  background-color: #000;
+}
+
+.logger{
+  border: 1px;
+  border-radius: 8px;
+  border-color: #1A6BAB !important;
+  border-style: groove;
+  margin-top: 8px;
+  padding-top: 5px;
+  border-left: 8px solid;
+  height:80vh;
+}
+
+.scrollable{
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
+.error{
+  background-color: red;
+}
+
+/**** Toaster Element ****/
+#toaster {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #1A6BAB;
+    color: white;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 2000;
+    left: 50%;
+    bottom: 30px;
+    font-size: 17px;
+}
+
+#toaster.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 30px;
+        opacity: 1;
+    }
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
+}
+/**** Toaster Element Ends ****/
