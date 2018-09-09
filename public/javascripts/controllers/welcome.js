@@ -9,43 +9,14 @@ app.controller('welcomeControl', welcomeControl);
 
 function welcomeControl($scope, $rootScope, $http, $timeout, restService) {
 
-  var toastEle = document.getElementById("toaster"); //for displaying messages in div
-
-  //Config File Initialization
   $rootScope.webTitle = webTitle; //variable with global scope
 
-  // variable declaration
-  $scope.logData = [];  //Array Declaration
-  $scope.bCallOn = false; //Boolean Declaration
-  $scope.toaster_msg = ""; // String Declaration
-  $scope.currentIndex = 0; //Integer Declaration
-  var bInitFlag = false; //Simple Javascript Variable Declaration
-
-  //Function For API Call
-  $scope.apiCall = function() {
-    toaster("API Called.....");
-    restService.getData().then(function(response){
-      console.log(response);
-      $timeout(function () {
-          toaster("API Responded.....");
-      }, 3000);
-
-    });
-  }
-
-  function toaster(msg) {
-    toastEle.className = "show";
-    $scope.toaster_msg = msg;
-    $timeout(function() {
-        toastEle.className = toastEle.className.replace("show", "");
-    }, 3000);
-  }
 }
 
 //Directives
 app.directive('feature',function(){
 	return {
-		template:"The features are as listed below: <br><ol><li>Organised Folder Structure</li><li>Angular Services</li><li>Angular Directives</li><li>Proper Path provided for bower components</li><li>Demonstration of API Calling</li><li>Demonstration of Connection to MongoDB(with 'mongodb'[npm package])</li></0l>"
+		template:"The features are as listed below: <br><ol><li>Demonstration of Connection to MongoDB(with 'mongoose'[npm package]).</li><li>Demonstration of API Calling.</li><li>Performing CRUD Operations using Node and Mongoose <b>using Async/Await.</b> </li><li>Angular Services.</li><li>Angular Directives.</li></0l>"
 	}
 });
 

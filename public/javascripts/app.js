@@ -13,6 +13,9 @@ var app = angular.module('boiler', ['ngRoute']);
         .when('/', { //FOR MAP
             templateUrl: '/welcome',
             controller: 'welcomeControl'
+        }).when('/todo', { //FOR MAP
+            templateUrl: '/todo',
+            controller: 'todoControl'
         });
 
 }]);

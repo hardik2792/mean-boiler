@@ -1,0 +1,65 @@
+<div id="" class="container">
+  <div id="head" class="row col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+      <h1 class='btn-primary'>To Do App!</a></h1>
+      <a href="#/"  style="font-size: 20px; font-weight: bolder; color: lime;">Home</a>
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left div-diff" style="padding-left: 5px; padding-right: 5px;">
+         <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 text-left" style="">
+          <input class="col-sm-12" type="text" name="todo" placeholder="To do Details" ng-model='todo.details'>
+         </div>
+         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-left" style="">
+          <select ng-model="todo.priority">
+            <option value="">Select Priority</option>
+            <option value="normal">Normal</option>
+            <option value="urgent">Urgent</option>
+          </select>
+         </div>
+         <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-right" style="">
+          <button class="btn btn-primary" ng-click="addtodo(todo)" title="Click to Add Todo"><i class='glyphicon glyphicon-plus'></i></button>
+         </div>
+      </div>
+      <div class=" col-lg-12 col-md-12 col-sm-12 col-xs-12 text-left todo" style="padding-left: 5px; padding-right: 5px;">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+          <div class="col-lg-1">
+            No.
+          </div>
+          <div class="col-lg-5">
+            To Do
+          </div>
+          <div class="col-lg-2">
+            Priority
+          </div>
+          <div class="col-lg-2">
+            Status
+          </div>
+          <div class="col-lg-2">
+            Action
+          </div>
+        </div>
+        <div ng-repeat="todo in todoList" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 todo text-center">
+           <div class="col-lg-1">
+            {{$index+1}}
+          </div>
+          <div class="col-lg-5">
+            {{todo.details}}
+          </div>
+          <div class="col-lg-2 text-capitalize">
+            {{todo.priority}}
+          </div>
+          <div class="col-lg-2">
+            <select ng-model="todo.isCompleted" ng-change='updatetodo(todo)'>
+              <option value="true" ng-selected="todo.isCompleted">Complete</option>
+              <option value="false" ng-selected="!todo.isCompleted">Incomplete</option>
+            </select>
+          </div>
+          <div class="col-lg-2">
+            <!-- <button class="btn btn-success btn-sm"><i class='glyphicon glyphicon-pencil'></i></button> -->
+            <button class="btn btn-danger btn-sm" ng-click="deletetodo(todo,$index)" title="Click to Delete Todo"><i class='glyphicon glyphicon-trash'></i></button>
+          </div>
+        </div>
+        <div ng-if="todoList.length == 0" class="todo text-center" style="margin-top: 20px;">
+          <b ng-if="bRequested && !bResponded">Getting Todo List</b>
+          <b ng-if="!bRequested && bResponded">No ToDo to display</b>
+        </div>
+      </div>
+  </div>
+</div>

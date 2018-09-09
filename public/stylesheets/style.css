@@ -43,27 +43,50 @@ a:hover {
     cursor: pointer;
 }
 
-.slant-label {
-    height: 20px;
-    width: 150px;
-    text-align: center;
-    position: relative;
-    transform: rotate(45deg);
-    left: 104px;
-    top: 20px;
-    background-color: var(--theme-color);
-    color: var(--theme-contrast-color);
+input[type=text] {
+    border: none;
+    /*background-color: #000;*/
+    background-color: var(--template-bgcolor);
+    color: white;
+    padding-top: 5px;
+    padding-left: 2px;
+    border-bottom: 2px solid white;
 }
 
-.summaryData{
-    color: var(--theme-color);
+select, textarea{
+    border: none;
+    background-color: var(--template-bgcolor);
+    color:white;
+    border-bottom: 2px solid white;
 }
 
 .main{
   height:100vh;
-  color: lime; 
+  color: white;
   background-color: #000;
 }
+
+.div-diff{
+  border: 1px;
+  border-radius: 8px;
+  border-color: white !important;
+  border-style: groove;
+  margin-top: 8px;
+  padding-top: 5px;
+  border-left: 8px solid;
+  padding-bottom: 5px;
+}
+
+.todo{
+  border: 1px;
+  border-radius: 8px;
+  border-color: white !important;
+  border-style: groove;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 
 .logger{
   border: 1px;

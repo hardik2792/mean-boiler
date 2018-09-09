@@ -36,6 +36,7 @@ Created By: Hardik Thakor -->
       <script src="./javascripts/config.js"></script>
       <script src="./javascripts/app.js"></script>
       <script src="./javascripts/controllers/welcome.js"></script>
+      <script src="./javascripts/controllers/todo.js"></script>
       <script src="./javascripts/services/restService.js"></script>
   </head>
 
@@ -43,5 +44,7 @@ Created By: Hardik Thakor -->
       <div ng-view="">
         <!--  Template View Platform-->
       </div>
+       <!--  Toaster -->
+      <div id="toaster">{{toaster_msg}}</div>
 </body>
 </html>

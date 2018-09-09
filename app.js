@@ -6,27 +6,35 @@ Created By: Hardik Thakor
 */
 
 // Imports
-const express = require('express');
-const http = require('http');
-const path = require('path');
-const chalk = require('chalk'); //For Displaying Logs in different Colors
-const fs = require('fs');
-const appConfig = require('./config/appConfig');
+const express 	= require('express');
+const http 		= require('http');
+const path 		= require('path');
+const chalk 	= require('chalk'); //For Displaying Logs in different Colors
+const fs 		= require('fs');
+const ip        = require('ip');
+const server 	= require('./support/config/appConfig').server;
+const models    = path.join(__dirname, './support/models');         //Fetching All Models
 
 const app = express();
 
 // Setting Application PORT
-app.set('port', process.env.PORT || appConfig.server.port);
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');    //Setting View Engine
+app.set('port', process.env.PORT || server.port);
+
+// Middlewares setup
+require('./support/middleware')(app);
+
+//For Listing All the Models
+fs.readdirSync(models)
+  .filter(file => ~file.search(/^[^\.].*\.js$/))
+  .forEach(file => require(path.join(models, file)));
 
 // Default Application Path
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Application Routes
-require('./routes/index.js')(app);
+require('./support/routes/index.js')(app);
 
 // Starting Server...
 http.createServer(app).listen(app.get('port'), '0.0.0.0', function() {
-    console.log(chalk.green.bold(appConfig.server.name),chalk.blue('started @ port '),chalk.green.bold(app.get('port')));
+    console.log(chalk.green.bold(server.name),chalk.blue('started @ IP'),chalk.green.bold('`http://'+ip.address()+':'+app.get('port')+'`'));
 });

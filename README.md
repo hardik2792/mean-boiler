@@ -4,7 +4,10 @@
 ### Purpose:
 
 To provide platform for beginner in MEAN Full Stack Development. It contains Demonstration for AngularJS features like Directives and Services.
-Includes API Calling, Express as intermediator and folder Structure as well, also Connection with MongoDB(NoSQL).
+
+Includes API Calling, Express as intermediator, Connecting MongoDB(NoSQL) with Node and Performing CRUD operations.
+
+Have adapted methodology to process using `Async/Await`.
 
 ### Prerequisites on Machine:
 
