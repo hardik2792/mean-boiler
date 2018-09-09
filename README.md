@@ -13,15 +13,16 @@ Have adapted methodology to process using `Async/Await`.
 
 1. [Node JS](https://nodejs.org/en/download/)
 2. `npm` (Node Package Manager) - Mostly gets installed at the time of nodejs installation
-3. `bower` - If not then Install it using
+3. [`yarn`](https://yarnpkg.com/en/)
+4. `bower` - If not then Install it using
     ```sh
     $ npm install bower -g
     ```
-4. `git`(Repository Manager)
+5. `git`(Repository Manager)
     ```sh
     $ sudo apt-get install git
     ```
-5. [Mongodb](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-16-04)
+6. [Mongodb](https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-16-04)
 
 ### Steps To Execute:
 
@@ -34,7 +35,7 @@ $ git clone https://github.com/hardik2792/mean-boiler.git
 
 3. Execute
 ```sh
-$ npm install
+$ yarn install
 ```
 
 4. After that follow `bower install`.
