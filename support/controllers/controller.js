@@ -64,7 +64,6 @@ async function deletetodo(req,res){
   }
 }
 
-// Exports
 module.exports = {
     todo,       //1
     gettodo,    //2

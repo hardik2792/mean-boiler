@@ -10,6 +10,7 @@ const chalk 	= require('chalk');
 const dbControls= require('../config/appConfig').db;
 
 const control = require('../controllers/controller');
+const foCtrls = require('../controllers/fileOperations');
 
 // Connecting to Database
 const dbConnectURL = dbControls.url;
@@ -50,11 +51,6 @@ module.exports=function(app) {
 	app.post("/addtodo", control.addtodo);
 	app.put("/updatetodo", control.updatetodo);
 	app.delete("/deletetodo/:id", control.deletetodo);
+
+	app.get("/generatingFile", foCtrls.generatingFile);
 };
-
-// Router.get("/gettodo", control.gettodo);
-// Router.post("/addtodo", control.addtodo);
-// Router.put("/updatetodo", control.updatetodo);
-// Router.delete("/deletetodo", control.deletetodo);
-
-// module.exports = Router;

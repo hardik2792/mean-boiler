@@ -4,10 +4,10 @@ App Name: MEAN Boiler
 Purpose: Supply Control to Welcome.ejs
 Created By: Hardik Thakor */
 
-todoControl.$inject = ['$scope', '$rootScope', '$http', '$timeout', 'restService'];
+todoControl.$inject = ['$scope', '$rootScope', '$window', '$http', '$timeout', 'restService'];
 app.controller('todoControl', todoControl);
 
-function todoControl($scope, $rootScope, $http, $timeout, restService) {
+function todoControl($scope, $rootScope, $window, $http, $timeout, restService) {
 
   var toastEle = document.getElementById("toaster"); //for displaying messages in div
 
@@ -69,6 +69,17 @@ function todoControl($scope, $rootScope, $http, $timeout, restService) {
         $scope.todoList.splice(index, 1);
       }else{
         toaster("Error while Deleting todo! ");
+      }
+    });
+  }
+
+  $scope.generatingFile = function(type) {
+   restService.generatingFile(type).then(function(response){
+      if(response.success){
+        toaster("File Generated!");
+        $window.open(response.data, '_blank');
+      }else{
+        toaster("Error Generating File!");
       }
     });
   }

@@ -12,7 +12,8 @@ function restService($http, $q) {
         gettodo : gettodo,
         addtodo : addtodo,
         updatetodo : updatetodo,
-        deletetodo : deletetodo
+        deletetodo : deletetodo,
+        generatingFile : generatingFile
     };
 
     var URL = "";
@@ -53,6 +54,7 @@ function restService($http, $q) {
         return deferred.promise;
     }
 
+    // For Deleting Todo
     function deletetodo(todo) {
         var deferred = $q.defer();
         URL = "/deletetodo";
@@ -60,6 +62,18 @@ function restService($http, $q) {
             deferred.resolve(res);
         }).error(function(er) {
             deferred.reject(er);
+        });
+        return deferred.promise;
+    }
+
+    // To Generate File as per type passed as params
+    function generatingFile(type) {
+        var deferred = $q.defer();
+        URL = "/generatingFile";
+        $http.get(URL,{params:{type:type}}).success(function(response) {
+          deferred.resolve(response);
+        }).error(function(er) {
+          deferred.reject(er);
         });
         return deferred.promise;
     }

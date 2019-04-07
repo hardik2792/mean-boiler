@@ -30,9 +30,12 @@ fs.readdirSync(models)
 
 // Default Application Path
 app.use(express.static(path.join(__dirname, 'public')));
+app.use("/files", express.static(__dirname + '/support/generatedFiles'));
 
 // Application Routes
 require('./support/routes/index.js')(app);
+
+global.appPort    = app.get('port');
 
 // Starting Server...
 http.createServer(app).listen(app.get('port'), '0.0.0.0', function() {

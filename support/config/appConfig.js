@@ -17,6 +17,7 @@ module.exports ={
         },
   "server": {       //Server Configuration
           "name":"MEAN Boiler Demo",
-          "port":4000
+          "port":4000,
+          "considerPort":true
         }
 }
