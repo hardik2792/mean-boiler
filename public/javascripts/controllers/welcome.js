@@ -32,6 +32,12 @@ app.directive('purpose',function(){
 	}
 });
 
+app.directive('functions',function(){
+	return {
+		template:"Functionalities<br><ul><li><strong>Add & Delete</strong> TODO</li><li><strong>Generate & Download</strong> Spreadsheets as well as CSV</li></ul>"
+	}
+});
+
 app.directive('apiButton',function(){
 	return {
 		template:"<button class='btn btn-primary' ng-click='apiCall()'' title='Click For Calling API'><span class='glyphicon glyphicon-play'><span>Call API</button>"

@@ -7,6 +7,8 @@ To provide platform for beginner in MEAN Full Stack Development. It contains Dem
 
 Includes API Calling, Express as intermediator, Connecting MongoDB(NoSQL) with Node and Performing CRUD operations.
 
+Basic Call to **Generate and download** *Spreadsheets* as well as *CSVs* using **[ExcelJS](https://www.npmjs.com/package/exceljs)**.
+
 Have adapted methodology to process using `Async/Await`.
 
 ### Prerequisites on Machine:
